@@ -6,7 +6,9 @@ class App extends Component {
     this.state = {
       firstName: "",
       lastName: "",
-      isFriendly: false
+      isFriendly: false,
+      gender: "",
+      favColor: "blue"
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -59,6 +61,41 @@ class App extends Component {
           />{" "}
           Is friendly?
         </label>
+
+        <br />
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="male"
+            checked={this.state.gender === "male"}
+            onChange={this.handleChange}
+          />{" "}
+          Male
+        </label>
+        <br />
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="female"
+            checked={this.state.gender === "female"}
+            onChange={this.handleChange}
+          />{" "}
+          Female
+        </label>
+        <br />
+
+        <label>Favorite Color:</label>
+        <select
+          value={this.state.favColor}
+          onChange={this.handleChange}
+          name="favColor"
+        >
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="red">Red</option>
+        </select>
 
         <h1>
           {this.state.firstName} {this.state.lastName}
